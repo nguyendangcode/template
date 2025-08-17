@@ -9,16 +9,12 @@ public:
 
     Mang(int n = 0) {
         sl = n;
-        if (sl > 0) data = new T[sl];
-        else data = nullptr;
+        data = new T[sl];
     }
     ~Mang() {
         delete[] data;
     }
     T& operator[](int i) {
-        if (i < 0 || i >= sl) {
-            throw out_of_range("Chi so nam ngoai mang!");
-        }
         return data[i];
     }
     int size() const { return sl; }
